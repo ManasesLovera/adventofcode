@@ -5,7 +5,9 @@ leftList = []
 rightList = []
 
 with open("input.txt", "r") as file:
+
     for line in file:
+
         cleanLine = line.strip()
         nums = cleanLine.split('   ')
         leftList.append(int(nums[0]))
@@ -14,6 +16,7 @@ with open("input.txt", "r") as file:
 result = 0
 
 while(len(leftList) != 0):
+    
     leftMin = min(leftList)
     rightMin = min(rightList)
     result += diff(leftMin, rightMin)
