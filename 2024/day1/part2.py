@@ -1,8 +1,3 @@
-from typing import List
-
-def appears(num: int, list: List[int]):
-    return list.count(num)
-
 leftList = []
 rightList = []
 
@@ -16,6 +11,6 @@ with open("input.txt", "r") as file:
 result = 0
 
 for num in leftList:
-    result += num * appears(num, rightList)
+    result += num * rightList.count(num)
 
 print(result)
