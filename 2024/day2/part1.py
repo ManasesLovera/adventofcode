@@ -42,7 +42,6 @@ amount = 0
 with open("input.txt", "r") as file:
 
     for line in file:
-        print(f"{line} = {isSafe(line)}")
         amount += 1 * isSafe(line)
 
 print(amount)
