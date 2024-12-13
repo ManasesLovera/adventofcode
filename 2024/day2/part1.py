@@ -6,12 +6,12 @@ class State(Enum):
     DECREASE = 2
 
 def isIncrease(n1, n2):
-    if n2 > n1 and n1 - n2 != 0 and abs(n1 - n2) <= 3:
+    if n2 > n1 and abs(n1 - n2) <= 3:
         return True
     return False
 
 def isDecrease(n1, n2):
-    if n2 < n1 and n1 - n2 != 0 and abs(n1 - n2) <= 3:
+    if n2 < n1 and abs(n1 - n2) <= 3:
         return True
     return False
 
@@ -24,6 +24,8 @@ def isSafe(line: str) -> int:
         state = State.INCREASE
     elif isDecrease(nums[0], nums[1]):
         state = State.DECREASE
+    else:
+        return False
     
     for i in range(1,len(nums)):
 
